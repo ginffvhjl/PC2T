@@ -39,7 +39,7 @@ public class databaseOperation {
         database.setMax(sc.nextFloat());
 
         while (true) {
-            System.out.print("Zadejte index zaměstnance: ");
+            System.out.print("\nZadejte index zaměstnance: ");
             int index = sc.nextInt() - 1;
             System.out.print("Jméno: " + arr[index].getName() + "\nRok: " + arr[index].getYear() + "\n");
             System.out.print("Zadejte nové úvazky: ");
