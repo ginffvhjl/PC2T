@@ -16,32 +16,40 @@ public class database extends databaseOperation {
         this.load = load;
     }
 
-    // 4. bod: Gettery (a settery) pro jednotlivé proměnné ( - settery se nepužívají, jsou zbytečné).
+    // 4. bod: Gettery (a settery) pro jednotlivé proměnné.
+    // Settery by měly mít jen atributy, které se upravují z potecionálních bezpečnostních důvdů (aby někdo neupravil hodnoty za chodu).
     public String getName() {
         return name;
     }
 
+    /*
     public void setName(String name) {
         this.name = name;
     }
+     */
 
     public int getYear() {
         return year;
     }
 
+    /*
     public void setYear(int year) {
         this.year = year;
     }
+    */
 
     public float getLoad() {
         return load;
     }
 
+    /*
     public void setLoad(float load) {
         this.load = load;
     }
+    */
 
-    // 5. bod: Nastevení setteru (a getteru) statické proměné maximálního úvazku - getter nevyužit.
+    // 5. bod: Nastevení setteru (a getteru) statické proměné maximálního úvazku.
+    // Gettery navíc nevadí - není šance skrz ně něco pokazit.
     public static float getMax() {
         return max;
     }
