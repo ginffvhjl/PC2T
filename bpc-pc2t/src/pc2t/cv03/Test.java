@@ -1,6 +1,7 @@
 package pc2t.cv03;
 
 //import java.util.InputMismatchException;
+import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -76,13 +77,14 @@ public class Test {
                         } else {
                             System.out.println("\nZápočet neudělen.");
                         }
-                        while (true) {
-                            System.out.print("\Zadjte něco pro pokračování (don't ask).");
-                            if (sc.hasNext()) {
-                                break;
-                            }
-                        }
 
+                        System.out.print("\nStiskněte enter pro pokračování...");
+                        try {
+                            System.in.read();
+                        }
+                        catch (Exception e) {
+                        }
+                        clearScreen();
                         System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
                         //TODO Smazat obraz, načíst znovu menu.
@@ -148,6 +150,13 @@ public class Test {
                         } else {
                             System.out.println("\nZápočet neudělen.");
                         }
+                        System.out.print("\nStiskněte enter pro pokračování...");
+                        try {
+                            System.in.read();
+                        }
+                        catch (Exception e) {
+                        }
+                        System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
 
                         //TODO Smazat obraz, načíst znovu menu.
@@ -171,7 +180,6 @@ public class Test {
                                 }
                             } else {
                                 System.out.print("Odpověď zadaná ve špatném tvaru!\nZadejte ano/ne: ");
-                                //sc.next();
                             }
                         }
 
@@ -180,6 +188,13 @@ public class Test {
                         } else {
                             System.out.println("\nZápočet neudělen.");
                         }
+                        System.out.print("\nStiskněte enter pro pokračování...");
+                        try {
+                            System.in.read();
+                        }
+                        catch (Exception e) {
+                        }
+                        System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
 
                         //TODO Smazat obraz a načíst znovu menu.
@@ -187,6 +202,7 @@ public class Test {
 
                     //Opatření při chybě uživatele.
                     default: {
+                        System.out.print("Zadejte položku z menu!\nVybráno: ");
                         menu = true;
                     }
                 }

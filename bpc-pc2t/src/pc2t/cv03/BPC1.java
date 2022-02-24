@@ -24,11 +24,9 @@ public class BPC1 implements Subject {
     @Override
     public boolean creditSubject() {
         if (points >= minPoint) {
-            System.out.println("Splněno");
             return true;
         }
         else {
-            System.out.println("Nesplněno");
             return false;
         }
     }
