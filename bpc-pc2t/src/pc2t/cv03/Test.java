@@ -156,9 +156,8 @@ public class Test {
                     System.out.println("\n"+values.nameSubject());
 
                     System.out.print("Zápočet udělen: ");
+                    sc.nextLine();
                     while (true) {
-                        //TODO Při špatném imputu se pak musí zadat enter, aby se načetla proměnná.
-                        sc.nextLine();
                         String help = sc.nextLine();
                         if (help.equals("ano") || help.equals("ne")) {
                             if (BPIS.checkString(help)) {
