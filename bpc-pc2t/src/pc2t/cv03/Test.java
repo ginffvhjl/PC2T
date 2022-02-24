@@ -157,7 +157,7 @@ public class Test {
 
                     System.out.print("Zápočet udělen: ");
                     while (true) {
-                        //TODO Do help se nenačítá proměnná.
+                        //TODO Při špatném imputu se pak musí zadat enter, aby se načetla proměnná.
                         sc.nextLine();
                         String help = sc.nextLine();
                         if (help.equals("ano") || help.equals("ne")) {
