@@ -8,10 +8,10 @@ public class BPC1 implements Subject {
     private static double activity;
     private static double exam;
 
-    private static final int maxActivity = 20;
-    private static final int maxExam = 80;
+    public static final int maxActivity = 20;
+    public static final int maxExam = 80;
 
-    //Předání jména, bodů, zápočtu Subject do test.java.
+    //Předání jména, bodů, zápočtu - beru ze Subject.java.
     @Override
     public String nameSubject() {
         return name;
@@ -34,23 +34,21 @@ public class BPC1 implements Subject {
     }
 
     // 1. bod: Metoda pro zadání bodů za aktivitu.
-    public static void setActivity(double Activity) {
-        if (Activity <= maxActivity && Activity >= 0)
-            activity = Activity;
-        else {
-            System.out.println("Body za aktivitu zadány mimo interval <0,20>.");
-            //TODO Zeptat se znovu.
-        }
+    public void setActivity(double activity) {
+        this.activity = activity;
     }
 
     // 2. bod: Metoda pro zadání bodů za zkoušku.
-    public static void setExam(double Exam) {
-        if (Exam <= maxExam && Exam >= 0)
-            exam = Exam;
-        else {
-            System.out.println("Body za zkoušku zadány mimo interval <0,80>.");
-            //TODO Zeptat se znovu.
+    public void setExam(double exam) {
+        this.exam = exam;
+    }
+
+    //Pomocná metoda kontroly intervalu.
+    public static boolean checkRange(double checkPoints, double maxRange) {
+        if (checkPoints >= 0 && checkPoints <= maxRange) {
+            return true;
         }
+        return false;
     }
 
 

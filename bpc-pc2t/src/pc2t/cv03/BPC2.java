@@ -8,9 +8,9 @@ public class BPC2 implements Subject{
     private static double halfExam;
     private static double exam;
 
-    private static final int maxProject = 30;
-    private static final int maxHalfExam = 20;
-    private static final int maxExam = 50;
+    public static final int maxProject = 30;
+    public static final int maxHalfExam = 20;
+    public static final int maxExam = 50;
 
     //Převedení do test.java.
     @Override
@@ -32,33 +32,26 @@ public class BPC2 implements Subject{
     }
 
     // 1. bod: Metoda pro zadání bodů za projekt.
-    public static void setProject(double Project) {
-        if (Project <= maxProject && Project >= 0)
-            project = Project;
-        else {
-            System.out.println("Body za projekt zadány mimo interval <0,30>.");
-            //TODO Zeptat se znovu.
-        }
+    public void setProject(double project) {
+        this.project = project;
     }
 
     // 2. bod: Metoda pro zadání bodů za půlsemestrální zkoušku.
-    public static void setHalfExam(double HalfExamPoints) {
-        if (HalfExamPoints <= maxHalfExam && HalfExamPoints >= 0)
-            halfExam = HalfExamPoints;
-        else {
-            System.out.println("Body za půlsemestrální test byly zadány mimo interval <0,20>.");
-            //TODO Zeptat se znovu.
-        }
+    public void setHalfExam(double halfExam) {
+        this.halfExam = halfExam;
     }
 
     // 3. bod: Metoda pro zadání bodů za zkoušku.
-    public static void setExam(double Exam) {
-        if (Exam <= maxExam && Exam >= 0)
-            exam = Exam;
-        else {
-            System.out.println("Body za zkoušky byly zadány mimo interval <0,50>.");
-            //TODO Zeptat se znovu.
+    public void setExam(double exam) {
+        this.exam = exam;
+    }
+
+    //Pomocná metoda kontroly intervalu.
+    public static boolean checkRange(double checkPoints, double maxRange) {
+        if (checkPoints >= 0 && checkPoints <= maxRange) {
+            return true;
         }
+        return false;
     }
 
 }

@@ -24,14 +24,19 @@ public class BPIS implements Subject{
     }
 
     // 1. bod: Metoda pro udělení zápočtu.
-    public static void setCredit(String Credit){
-        if (Credit.equals("ano"))
-            points = 100;
-        else if (Credit.equals("ne"))
-            points = 0;
-        else {
-            System.out.println("Zadejte ano / ne.");
-            //TODO Zeptat se znovu.
+    public void setGiveCredit(){
+        this.points = 100;
+    }
+
+    public  void setDontGiveCredit() {
+        this.points = 0;
+    }
+
+    //Pomocná metoda kontroly Stringu.
+    public static boolean checkString(String checkText) {
+        if (checkText.equals("ano")) {
+            return true;
         }
+        return false;
     }
 }
