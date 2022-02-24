@@ -1,16 +1,17 @@
 package pc2t.cv03;
 
 //import java.util.InputMismatchException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Test {
     //Metoda main.
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Možnosti menu.
         int index;
 
         //Nabídky menu (pro switch).
-        System.out.print("Menu\n \n1 BPC1\n2 BPC2\n3 BPIS\n0 Ukončit program\n\nVybráno: ");
+        System.out.print("Menu\n \n<1> BPC1\n<2> BPC2\n<3> BPIS\n<0> Konec\n\nVybráno: ");
 
         //Vytvoření scanneru.
         Scanner sc = new Scanner(System.in);
@@ -75,6 +76,14 @@ public class Test {
                         } else {
                             System.out.println("\nZápočet neudělen.");
                         }
+                        while (true) {
+                            System.out.print("\Zadjte něco pro pokračování (don't ask).");
+                            if (sc.hasNext()) {
+                                break;
+                            }
+                        }
+
+                        System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
                         //TODO Smazat obraz, načíst znovu menu.
                     }
@@ -181,12 +190,16 @@ public class Test {
                         menu = true;
                     }
                 }
-                break;
+                //break;
             }
             else {
                 System.out.print("Zadejte položku z menu! <1> <2> <3> <0>\nVybráno: ");
                 sc.next();
             }
         }
+    }
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }

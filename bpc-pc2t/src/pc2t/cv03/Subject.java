@@ -1,5 +1,6 @@
 package pc2t.cv03;
 
+// Interface nám zadává jaké metody máme využít.
 // A. bod: vytvoření interface Subject
 public interface Subject {
 
