@@ -1,13 +1,10 @@
 package pc2t.cv03;
 
-//import java.util.InputMismatchException;
-import java.awt.*;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Test {
     //Metoda main.
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //Možnosti menu.
         int index;
 
@@ -87,7 +84,6 @@ public class Test {
                         clearScreen();
                         System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
-                        //TODO Smazat obraz, načíst znovu menu.
                     }
 
                     case 2: {
@@ -156,10 +152,9 @@ public class Test {
                         }
                         catch (Exception e) {
                         }
+                        clearScreen();
                         System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
-
-                        //TODO Smazat obraz, načíst znovu menu.
                     }
 
                     case 3: {
@@ -194,10 +189,9 @@ public class Test {
                         }
                         catch (Exception e) {
                         }
+                        clearScreen();
                         System.out.print("\n\nMenu\n\n<1> BPC1\n<2> BPC2\n<3> BPIS \n<0> Konec\n\nZvolte další akci: ");
                         break;
-
-                        //TODO Smazat obraz a načíst znovu menu.
                     }
 
                     //Opatření při chybě uživatele.
@@ -206,7 +200,6 @@ public class Test {
                         menu = true;
                     }
                 }
-                //break;
             }
             else {
                 System.out.print("Zadejte položku z menu! <1> <2> <3> <0>\nVybráno: ");
