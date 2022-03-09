@@ -36,7 +36,7 @@ public class Test {
 		return number;
 	}
 
-	public static void main(String[] args) throws CustomException {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		Databaze mojeDatabaze=new Databaze(1);
