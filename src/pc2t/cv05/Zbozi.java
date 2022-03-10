@@ -7,7 +7,7 @@ public abstract class Zbozi {
     // Zboží s DPH = price + DPH * price = price ( 1 + 0.21)
     private static double DPH = 1.21;
 
-    Zbozi(String name, double price) {
+    public Zbozi(String name, double price) {
         this.name = name;
         this.price = price;
     }
