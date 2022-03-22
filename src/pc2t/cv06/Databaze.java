@@ -55,7 +55,7 @@ public class Databaze {
 					bw.append(prvkyDatabaze[i].getJmeno() + ";" + prvkyDatabaze[i].getRocnik() + ";" + prvkyDatabaze[i].getStudijniPrumer()+"\n");
 				}
 				catch (CustomException e) {
-					bw.append(prvkyDatabaze[i].getJmeno() + ";" + prvkyDatabaze[i].getRocnik()+"\n");
+					bw.append(prvkyDatabaze[i].getJmeno() + ";" + prvkyDatabaze[i].getRocnik()+";NEZADAN\n");
 				}
 			}
 		}
@@ -64,9 +64,6 @@ public class Databaze {
 		}
 	}
 
-	/*public void readFromFile (String file) throws CustomException {
-		this.;
-	}*/
 	public void readFromFile(String file, Databaze mojeDatabaze) throws CustomException, IOException {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 
@@ -74,36 +71,14 @@ public class Databaze {
 			String line = br.readLine();
 			String[] pole = line.split(";");
 			int year = Integer.parseInt(pole[1]);
-			float average = Float.parseFloat(pole[2]);
 			mojeDatabaze.setStudent(pole[0], year);
-			mojeDatabaze.setPrumer(i,average);
-		}
-
-		/*String name;
-		int year;
-		float average;
-		try (Scanner load = new Scanner(new FileReader(file))) {
-			int i = 0;
-			while (load.hasNext()) {
-				name = load.next();
-				year = load.nextInt();
-				try {
-					average = load.nextFloat();
-					mojeDatabaze.setPrumer(i,average);
-				}
-				catch (CustomException e){
-					continue;
-				}
-				mojeDatabaze.setStudent(name, year);
-
-				i++;
+			try {
+				float average = Float.parseFloat(pole[2]);
+				mojeDatabaze.setPrumer(i,average);
+			}
+			catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Student s indexem "+i+" nemá zadán průměr.");
 			}
 		}
-		catch (IOException e) {
-			System.out.printf("Výjimka typu "+e.toString());
-		}
-		catch (ArrayIndexOutOfBoundsException e) {
-			System.out.printf("Není známá velikost datbáze nebo je počet studentů větší než velikost databáze");
-		}*/
 	}
 }
