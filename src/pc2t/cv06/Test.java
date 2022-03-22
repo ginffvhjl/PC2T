@@ -77,7 +77,7 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		Databaze mojeDatabaze=new Databaze(10);
+		Databaze mojeDatabaze=new Databaze(1);
 		int idx;
 		float prumer;
 		int volba;
@@ -102,10 +102,6 @@ public class Test {
 					break;
 				case 2:
 					// TODO kontrola String a int
-					/*System.out.print("Zadejte jméno a rok narození studenta: ");
-					String name = sc.next();
-					int year = Test.pouzeCelaCisla(sc);
-					mojeDatabaze.setStudent(name, year);*/
 					// Kontrola, jestli nedošlo k naplnění array
 					try {
 						String name = sc.next();
@@ -142,18 +138,6 @@ public class Test {
 					break;
 				case 4:
 					System.out.printf("\nZadejte index studenta: ");
-					/*idx = arraySize(sc,mojeDatabaze);
-					Student info = mojeDatabaze.getStudent(idx);
-					try {
-						System.out.println("\nJméno: "+info.getJmeno()+"\nRok narození: "+info.getRocnik()+"\nPrůměr: "+info.getStudijniPrumer()+"\n");
-					}
-					catch (CustomException e) {
-						System.out.println("\nJméno: "+info.getJmeno()+"\nRok narození: "+info.getRocnik()+"\nPrůměr nezadán.");
-					}
-					catch (NullPointerException e) {
-						System.out.println("\nZadaná položka neexituje.");
-						System.out.println("Nastala výjimka "+e.toString()+"\n");
-					}*/
 					idx=pouzeCelaCisla(sc);
 					try {
 						Student info = mojeDatabaze.getStudent(idx);
