@@ -1,4 +1,8 @@
+#složky
 .idea/
 out/
 META-INF/
-bpc-pc2t.iml
+
+#soubory
+src/pc2t/pc2t.iml
+BPC-PC2T.iml
