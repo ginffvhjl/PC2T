@@ -4,15 +4,14 @@ import java.util.HashMap;
 import java.util.*;
 
 public class Databaze {
-	// Vytvoření objektu Hashmap
 	public Databaze() {
 		database = new HashMap<>();
 	}
 	// Deklarace Map s klíčem a objektem Student
 	private Map<String, Student> database;
 
-	// Zápis studenta do Hashmap a tvorba objektu studenta
 	public void setStudent(String name, int year, float gpa) {
+		// Vložení klíče a hodnoty do mapy (jestliže klíč v mapě je, přepíše se hodnota) - hodnota je objekt studenta, který je zde tvořen
 		database.put(name, new Student(year, gpa));
 	}
 
@@ -28,8 +27,10 @@ public class Databaze {
 	}
 	// Vypsání studenta, jestliže existuje
 	public Boolean getStudent(String name) throws CustomException {
+		// Jestliže mapa obsahuje klíč, vrací true
 		if (database.containsKey(name)) {
 			try {
+				// get(name) vrací hodnotu odpovídající zadanému klíči
 				System.out.println("\nJméno: "+name+"\nRok narození: "+database.get(name).getYear()+"\nPrůměr: "+database.get(name).getGpa());
 			}
 			catch (CustomException e) {
@@ -42,11 +43,11 @@ public class Databaze {
 			return false;
 		}
 	}
-
+	// Vypsání množiny obsahující všechny klíče
 	public void printDatabase() {
 		System.out.println(database.keySet());
 	}
-
+	// Vrácení hodnoty odpovídající klíči a smazání jejího záznamu
 	public void deleteStudent(String name) {
 		database.remove(name);
 	}
