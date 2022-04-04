@@ -2,7 +2,12 @@
 .idea/
 out/
 META-INF/
+db/
+target/
 
 #soubory
 src/pc2t/pc2t.iml
 BPC-PC2T.iml
+animals.txt
+pom.xml
+
