@@ -14,7 +14,7 @@ public class Hranol extends Ctverec {
 
     // vypocet objemu hranolu
     float vypoctiObjem() {
-        // TODO hrana přepsána na výšku -> hrana*hrana nahrazeno vypoctiObsah
+        // TODO 7 hrana přepsána na výšku -> hrana*hrana nahrazeno vypoctiObsah
         return this.hrana*vypoctiObsah();
     }
 
@@ -39,7 +39,7 @@ public class Hranol extends Ctverec {
     }
     // nastaveni vysky hranolu
     void setHrana(float delka) {
-        hrana=delka;
+        hrana = delka;
     }
 
     private float hrana;

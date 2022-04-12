@@ -22,25 +22,24 @@ public class Pole {
         while(!sc.hasNextFloat()) {
             sc.next();
         }
-        delka=sc.nextFloat();
+        delka = sc.nextFloat();
         System.out.printf("Zadejte vysku hranolu: ");
         while(!sc.hasNextFloat()) {
             sc.next();
         }
-        vyska=sc.nextFloat();
+        vyska = sc.nextFloat();
         System.out.println("Je drevena? [true/false]");
-        // TODO 6 hasNextFloat nahrazeno hasNextBoolean
+        // TODO 5 hasNextFloat nahrazeno hasNextBoolean
         while(!sc.hasNextBoolean()) {
             sc.next();
         }
-        drevena=sc.nextBoolean();
-        // TODO 11 > nahrazeno >=
-        if (Hranol.getPocetHranolu() >= mojeHranoly.length)
-        {
+        drevena = sc.nextBoolean();
+        // TODO 12 > nahrazeno >=
+        if (Hranol.getPocetHranolu() >= mojeHranoly.length) {
             System.out.println("Pole uz je zaplneno");
             return;
         }
-        // TODO 7 zápis nového hranolu
+        // TODO 6 zápis nového hranolu
         mojeHranoly[Hranol.getPocetHranolu()] = new Hranol(delka, vyska, drevena);
     }
 
@@ -52,36 +51,32 @@ public class Pole {
     }
 
     // vypis obsahu podstavy vsech hranolu
-    void vypoctiObsahPodstavy()
-    {
-        for (int i=0;i<Hranol.getPocetHranolu();i++)
-            // 11. chyba: místo vypoctiObsah bylo vypostiObjem
+    void vypoctiObsahPodstavy() {
+        for (int i = 0; i < Hranol.getPocetHranolu(); i++)
+            // TODO 9: místo vypoctiObsah bylo vypostiObjem
             System.out.println("Obsah podstavy " + i + ". hranolu je " + mojeHranoly[i].vypoctiObsah());
     }
 
     // nalezeni indexu nejmensiho hranolu
-    int najdiNejmensiObjem()
-    {
-        // TODO 9 "min = 0"
+    int najdiNejmensiObjem() {
+        // TODO 10 "min = 0"
         float min = MAX_VALUE;
         int idx = 0;
-        for (int i=0; i < Hranol.getPocetHranolu(); i++)
-        {
-            if (mojeHranoly[i].vypoctiObjem()<min){
-                min=mojeHranoly[i].vypoctiObjem();
-                idx=i;
+        for (int i = 0; i < Hranol.getPocetHranolu(); i++) {
+            if (mojeHranoly[i].vypoctiObjem() < min) {
+                min = mojeHranoly[i].vypoctiObjem();
+                idx = i;
             }
         }
         return idx;
     }
 
     // zjisteni celkoveho poctu drevenych kostek
-    int zjistiPocetDrevenych(){
-        int pocetDrevenych=0;
-        // TODO 10 místo "i=1" "i=0"
-        for (int i=0; i < mojeHranoly.length; i++)
-        {
-            // TODO 12 if (mojeHranoly[i].zeDreva = true)
+    int zjistiPocetDrevenych() {
+        int pocetDrevenych = 0;
+        // TODO 11 místo "i = 1" "i = 0"
+        for (int i = 0; i < mojeHranoly.length; i++) {
+            // TODO 13 if (mojeHranoly[i].zeDreva = true)
             if (mojeHranoly[i].zeDreva == true) {
                 pocetDrevenych++;
             }

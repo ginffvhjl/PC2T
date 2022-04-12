@@ -16,7 +16,7 @@ public class Ctverec {
     }
     // konstruktor se zadanim delky hrany ctverce
     Ctverec(float hrana){
-        // TODO 5 chybělo this.
+        // TODO 4 chybělo this.
         this.hrana=hrana;
     }
 }
