@@ -24,8 +24,11 @@ public class App {
         m1.addEmployee(e5);
 
         m1.writeEmployees();
+        System.out.println();
         // TODO "vypiš managera" v bodě 4
         m1.writeRelationships();
+
+        System.out.println();
 
         byte a = 1;
 
@@ -40,6 +43,8 @@ public class App {
         pig1.sound();
         cow1.sound();
         goat1.sound();
+
+        System.out.println();
 
         CatImpl cat2 = new CatImpl(a);
         DogImpl dog2 = new DogImpl(a);

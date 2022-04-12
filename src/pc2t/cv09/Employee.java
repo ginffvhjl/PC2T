@@ -36,7 +36,6 @@ public class Employee implements Comparable<Employee> {
         this.password = password;
     }
 
-    // TODO bod 5
     @Override
     public int compareTo(Employee employee) {
         return this.getEmail().compareTo(employee.getEmail());
@@ -44,6 +43,6 @@ public class Employee implements Comparable<Employee> {
 
     @Override
     public String toString() {
-        return "Employee: " + nickname + "\nEmail: " + email + "\n";
+        return "Employee: " + nickname + "\nEmail: " + email;
     }
 }

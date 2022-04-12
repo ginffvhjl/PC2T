@@ -1,6 +1,7 @@
 package pc2t.cv09;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Manager extends Employee {
@@ -36,6 +37,8 @@ public class Manager extends Employee {
     }
 
     public void writeEmployees() {
+        //this.listOfEmployees.sort();
+        Collections.sort(listOfEmployees);
         for (int i = 0; i < listOfEmployees.size(); i++) {
             System.out.println(listOfEmployees.get(i));
         }
