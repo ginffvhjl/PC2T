@@ -6,31 +6,32 @@ import static java.lang.Float.MAX_VALUE;
 
 public class Pole {
     // Konstruktor s velikosti pole
-    Pole(int velikost)
-    {
+    Pole(int velikost) {
         mojeHranoly = new Hranol[velikost];
-        sc = new Scanner(System.in);
     }
 
     // vlozeni hranolu do pole na prvni volnou pozici
     void zadejHranol() {
-        boolean drevena = false;
-        float delka = 0;
-        float vyska = 0;
+        // TODO zbytečně iniciovné
+        boolean drevena;
+        float delka;
+        float vyska;
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.printf("Zadejte delku podstavy hranolu: ");
-        while(!sc.hasNextFloat()) {
+        while (!sc.hasNextFloat()) {
             sc.next();
         }
         delka = sc.nextFloat();
         System.out.printf("Zadejte vysku hranolu: ");
-        while(!sc.hasNextFloat()) {
+        while (!sc.hasNextFloat()) {
             sc.next();
         }
         vyska = sc.nextFloat();
         System.out.println("Je drevena? [true/false]");
         // TODO 5 hasNextFloat nahrazeno hasNextBoolean
-        while(!sc.hasNextBoolean()) {
+        while (!sc.hasNextBoolean()) {
             sc.next();
         }
         drevena = sc.nextBoolean();
@@ -47,25 +48,26 @@ public class Pole {
     void vypoctiObjem() {
         for (int i = 0; i < Hranol.getPocetHranolu(); i++)
             // TODO 8 místo vypostiObjem bylo vypoctiObsah + výpis o kolikátý hranol jde (vypisovalo "i.")
-            System.out.println("Objem " + i + ". hranolu je " + mojeHranoly[i].vypoctiObjem());
+            System.out.println("Objem " + (i + 1) + ". hranolu je " + mojeHranoly[i].vypoctiObjem());
     }
 
     // vypis obsahu podstavy vsech hranolu
     void vypoctiObsahPodstavy() {
         for (int i = 0; i < Hranol.getPocetHranolu(); i++)
-            // TODO 9: místo vypoctiObsah bylo vypostiObjem
-            System.out.println("Obsah podstavy " + i + ". hranolu je " + mojeHranoly[i].vypoctiObsah());
+            // TODO 9: místo vypoctiObsah bylo vypoctiObjem
+            System.out.println("Obsah podstavy " + (i + 1) + ". hranolu je " + mojeHranoly[i].vypoctiObsah());
     }
 
     // nalezeni indexu nejmensiho hranolu
     int najdiNejmensiObjem() {
         // TODO 10 "min = 0"
         float min = MAX_VALUE;
+        //float min = mojeHranoly[0].vypoctiObjem(); // ve for cyklu se musí začínat porovnávat první hranol s druhým hranolem -> i = 1)
         int idx = 0;
         for (int i = 0; i < Hranol.getPocetHranolu(); i++) {
             if (mojeHranoly[i].vypoctiObjem() < min) {
                 min = mojeHranoly[i].vypoctiObjem();
-                idx = i;
+                idx = i + 1;
             }
         }
         return idx;
@@ -84,6 +86,5 @@ public class Pole {
         return pocetDrevenych;
     }
 
-    private Scanner sc;
-    private Hranol []mojeHranoly;
+    private Hranol[] mojeHranoly;
 }
