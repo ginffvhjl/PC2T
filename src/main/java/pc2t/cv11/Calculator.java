@@ -54,8 +54,7 @@ public class Calculator {
                 ScriptEngineManager manager = new ScriptEngineManager();
                 ScriptEngine engine = manager.getEngineByName("graal.js");
                 try {
-                    String labelText = (String) engine.eval(label.getText());
-                    label.setText(labelText);
+                    label.setText(String.valueOf(engine.eval(label.getText())));
                 } catch (ScriptException ex) {
                     throw new RuntimeException(ex);
                 }
